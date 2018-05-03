@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+let style = {
+	tableContent: {
+		border: "1px solid black;"
+	},
+	table: {
+		border: "2px solid black;"
+	}
+};
+
 class TodoList extends React.Component {
 	render() {
 		return (
 			<div className="todoList">
-				<table style={{ border: "2px solid black;" }}>
+				<table style={style.table}>
 					<tbody>
 						<Todo title="Shopping">Milk</Todo>
 						<Todo title="Hair cut">13:00</Todo>
@@ -24,20 +33,19 @@ class Todo extends React.Component {
 		this.state = { checked: false };
 	}
 
-	handleChange(event){
+	handleChange(event) {
 		console.log(`Changing state from ${this.state.checked} to ${event.target.value}`);
-		this.setState({checked: event.target.value });
+		this.setState({ checked: event.target.value });
 	}
 
 	render() {
-		console.log(this.handleChange);
 		return (
 			<tr>
-				<td style={{ border: "1px solid black;" }}>
+				<td style={style.tableContent}>
 					<input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)} />
 				</td>
-				<td style={{ border: "1px solid black;" }}>{this.props.title}</td>
-				<td style={{ border: "1px solid black;" }}>{this.props.children}</td>
+				<td style={style.tableContent}>{this.props.title}</td>
+				<td style={style.tableContent}>{this.props.children}</td>
 			</tr>
 		)
 	}
