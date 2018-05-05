@@ -34,10 +34,9 @@ class Todo extends React.Component {
 	}
 
 	handleChange(event) {
-		console.log(`Changing state from ${this.state.checked} to ${event.target.value}`);
+		console.log(`Changing state from ${this.state.checked} to ${!this.state.checked}`);
 		this.setState({
-			checked: event.target.value,
-			title: 'checked'
+			checked: !this.state.checked
 		});
 	}
 
