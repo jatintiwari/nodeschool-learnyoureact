@@ -19,7 +19,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node program.js 3000 Milk 13:20"
+    "start": "node program.js 3000 Milk 13:20",
+    "bundle": "rm -rf bundle.js && browserify -t [babelify] app.js -o bundle.js",
+    "clean": "rm -rf bundle.js"
   },
   "keywords": [],
   "author": "",
