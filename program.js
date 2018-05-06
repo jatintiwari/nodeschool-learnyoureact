@@ -19,9 +19,9 @@ const TodoBox = require('./views/index.jsx');
 
 
 app.set('port', (process.argv[2] || 3000));
-// app.set('view engine', 'jsx');
-// app.set('views', __dirname + '/views');
-// app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
+app.set('view engine', 'jsx');
+app.set('views', __dirname + '/views');
+app.engine('jsx', require('express-react-views').createEngine({ transformViews: false }));
 
 require('babel/register')({
 	ignore: false
